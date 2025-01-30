@@ -8,6 +8,3 @@ export default defineConfig({
     exclude: ['lucide-react'],
   },
 });
-"scripts": {
-  "build": "react-scripts build"  # Debe estar presente
-}
