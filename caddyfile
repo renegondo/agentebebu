@@ -1,7 +1,0 @@
-agente.prospectos.pro {
-    reverse_proxy agentebebu:80
-    encode gzip
-    tls {
-        protocols tls1.2 tls1.3
-    }
-}
