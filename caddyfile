@@ -1,0 +1,16 @@
+agente.prospectos.pro {
+    # Sirve los archivos estáticos de React
+    root * /usr/share/caddy
+    file_server
+
+    # Configuración para React Router (SPA)
+    try_files {path} /index.html
+
+    # Habilita compresión GZIP
+    encode gzip
+
+    # HTTPS automático (Let's Encrypt)
+    tls {
+        protocols tls1.2 tls1.3
+    }
+}
