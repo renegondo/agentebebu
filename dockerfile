@@ -1,10 +1,13 @@
-# ---- Etapa de construcción ----
 FROM node:18-alpine AS builder
 
 WORKDIR /app
 COPY package*.json ./
 COPY tsconfig*.json ./
-RUN npm ci --legacy-peer-deps
+
+# Instala dependencias con force (si hay conflictos)
+RUN npm config set legacy-peer-deps true
+RUN npm install
+
 COPY . .
 RUN npm run build  # Asegúrate de que este comando genera /app/build
 
